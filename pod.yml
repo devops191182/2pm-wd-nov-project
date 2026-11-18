@@ -8,11 +8,11 @@
           apiVersion: v1
           kind: Pod
           metadata:
-            name: asja-pod
+            name: croma-pod
             namespace: default
           spec:
             containers:
               - name: cont-01
-                image: nginx:latest
+                image: ubuntu:latest
                 ports:
                   - containerPort: 80
