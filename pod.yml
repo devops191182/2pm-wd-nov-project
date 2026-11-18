@@ -1,0 +1,18 @@
+- name: Deploy Nginx Pod
+  hosts: k8s
+  tasks:
+    - name: Deploy Nginx Pod
+      kubernetes.core.k8s:
+        state: present
+        definition:
+          apiVersion: v1
+          kind: Pod
+          metadata:
+            name: asja-pod
+            namespace: default
+          spec:
+            containers:
+              - name: cont-01
+                image: nginx:latest
+                ports:
+                  - containerPort: 80
